@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#242424">
-  <meta name="description" content="谭嘉慧的作品集首页，柔光随时间缓缓转动。">
+  <meta name="description" content="谭嘉慧的 UX / UI 设计作品集与个人介绍。">
   <title>光影 · Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23242424'/%3E%3Cpath d='M16 5L29 27H3Z' fill='%23ddd'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <main class="stage" aria-label="谭嘉慧作品集">
+  <main>
+  <section class="stage" aria-label="谭嘉慧作品集封面">
     <div class="light-arrival" aria-hidden="true"><div class="light-drift"><img src="assets/light-source.png" alt="" fetchpriority="high" width="1920" height="1080"></div></div>
     <div class="glow" aria-hidden="true"></div>
     <div class="shade" aria-hidden="true"></div>
@@ -20,7 +21,49 @@
       <div class="identity"><p class="name">谭嘉慧</p><div class="contact"><span>手机 (微信): Tan13998092780</span><a href="mailto:tanjiahui0507@qq.com">邮箱: tanjiahui0507@qq.com</a></div></div>
       <span class="discipline">UI UX</span>
     </footer>
-  </main>
   <nav class="controls" aria-label="动画控制"><button id="pause" type="button" aria-pressed="false">暂停</button><span aria-hidden="true">/</span><button id="replay" type="button">重播</button></nav>
+  </section>
+  <section class="profile" id="profile" aria-labelledby="profile-heading">
+    <div class="profile-layout">
+      <article class="profile-card bio-card" data-reveal>
+        <figure class="portrait" data-reveal style="--reveal-delay: 180ms">
+          <figcaption><span>UX UI Designer</span><span>Tan Jiahui</span></figcaption>
+          <img src="assets/profile-photo.png" width="615" height="439" alt="谭嘉慧的个人照片" loading="lazy">
+        </figure>
+        <div class="bio-info">
+          <div class="info-row" data-reveal style="--reveal-delay: 360ms">
+            <div><h3>教育背景</h3><p>鲁迅美术学院 · 本＋硕</p></div>
+            <div><h3>求职方向</h3><p>UX / UI 用户体验设计师</p></div>
+          </div>
+          <div class="info-row" data-reveal style="--reveal-delay: 470ms">
+            <div><h3>专业</h3><p>艺术设计 · 产品设计</p></div>
+          </div>
+          <div class="info-row" data-reveal style="--reveal-delay: 580ms">
+            <div><h3>微信/电话</h3><p><a href="tel:13998092780">13998092780</a></p></div>
+            <div><h3>邮箱</h3><p><a href="mailto:tanjiahui0507@qq.com">tanjiahui0507@qq.com</a></p></div>
+          </div>
+          <div class="tools-row" data-reveal style="--reveal-delay: 690ms"><h3>工具栈</h3><p>Figma/Sketch/PS/AI/慕课/codex/stitch......</p></div>
+        </div>
+      </article>
+      <article class="profile-card statement-card" data-reveal style="--reveal-delay: 120ms">
+        <header class="profile-heading" data-reveal style="--reveal-delay: 300ms">
+          <p class="eyebrow">PERSONAL PROFILE</p>
+          <h2 id="profile-heading">具备用户思维、业务理解与落地能力的体验设计实践者</h2>
+        </header>
+        <div class="profile-description" data-reveal style="--reveal-delay: 560ms">
+          <p>具备主导 0-1 落地与体验改版能力。深度参与用户调研、竞品分析与需求梳理</p>
+          <p>主导设计方案并与产品 / 开发评审对齐</p>
+          <p>输出组件交互规范、状态规则与边界定义，推动全链路落地</p>
+        </div>
+        <dl class="profile-stats">
+          <div data-reveal style="--reveal-delay: 800ms"><dt>4</dt><dd>段实习经历</dd></div>
+          <div data-reveal style="--reveal-delay: 920ms"><dt>0–1</dt><dd>主导项目落地</dd></div>
+          <div data-reveal style="--reveal-delay: 1040ms"><dt>100:3</dt><dd>保研综合排名</dd></div>
+          <div data-reveal style="--reveal-delay: 1160ms"><dt>2020–2027</dt><dd>鲁迅美术学院本硕</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+  </main>
 </body>
 </html>

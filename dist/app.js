@@ -21,3 +21,16 @@ replay.addEventListener('click', () => {
 document.addEventListener('visibilitychange', () => document.body.classList.toggle('hidden-tab', document.hidden));
 reduceMotion.addEventListener('change', syncMotionPreference);
 syncMotionPreference();
+
+// Each label/value pair or paragraph block moves as a whole, never letter by letter.
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  }, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
+  document.documentElement.classList.add('reveal-ready');
+  for (const group of document.querySelectorAll('[data-reveal]')) revealObserver.observe(group);
+}
