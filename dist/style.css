@@ -63,6 +63,26 @@ h1 { position: absolute; top: 44%; left: 7.65%; margin: 0; font-family: Arial, H
 @media (max-width: 420px) { .info-row { grid-template-columns: 1fr; gap: 14px; } .bio-info p { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .reveal-ready [data-reveal], .reveal-ready [data-reveal].is-visible { animation: none !important; opacity: 1; transform: none; } }
 
+/* Fourth page: Figma project cards reuse the profile's grouped reveal. */
+.projects { --reveal-distance: 20px; padding: clamp(32px,3.28vw,72px) 5.3% clamp(64px,5.8vw,128px); color: #fff; background: #cecfcb; }
+.projects-list { display: grid; gap: clamp(24px,2.24vw,48px); max-width: 1968px; margin: 0 auto; }
+.project-card { display: grid; grid-template-columns: minmax(0,900fr) minmax(0,666fr); align-items: center; gap: clamp(28px,3.59vw,80px); padding: clamp(24px,2.14vw,48px); border: 1px solid #ffffff0d; border-radius: clamp(26px,2.08vw,44px); background: linear-gradient(100deg,rgba(48,67,74,.81),rgba(10,13,16,.81)); box-shadow: 0 20px 44px -28px #00000038; }
+.project-image { display: block; width: 100%; height: auto; aspect-ratio: 2; object-fit: cover; border-radius: 6px; }
+.project-copy { min-width: 0; }
+.project-meta { display: flex; justify-content: space-between; gap: 16px; margin: 0 0 12px; color: #adb4c0; font-size: clamp(13px,.833vw,17px); line-height: 1.4; letter-spacing: .035em; }
+.project-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.project-card h3 { margin: 0; font-size: clamp(24px,1.563vw,34px); line-height: 1.25; font-weight: 750; }
+.project-title img { flex: 0 0 auto; width: clamp(32px,2.76vw,54px); height: auto; }
+.project-role { margin: 12px 0; color: #d1d5db; font-size: clamp(16px,1.042vw,22px); line-height: 1.4; }
+.project-description { margin: 0; font-size: clamp(16px,1.042vw,22px); line-height: 1.6; }
+.project-description p { margin: 0; }
+.other-projects { grid-template-columns: 1fr; gap: clamp(28px,2.24vw,48px); }
+.other-projects .project-description { margin-top: 12px; }
+.project-gallery { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; overflow: hidden; border-radius: 6px; }
+.project-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 412 / 230; object-fit: cover; }
+@media (max-width: 1000px) { .project-card { grid-template-columns: 1fr; gap: 26px; } .project-copy { padding: 0 4px; } .project-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; } .project-card h3 { font-size: 26px; } }
+@media (max-width: 500px) { .projects { padding: 32px 5% 56px; } .project-card { padding: 20px; gap: 24px; } .project-copy { padding: 0; } .project-card h3 { font-size: 24px; } .project-role { font-size: 15px; } .project-meta { font-size: 12px; } .project-gallery { gap: 8px; } }
+
 /* Third page: static image with staggered, subtle text reveals. */
 .experience { --reveal-distance: 16px; position: relative; isolation: isolate; min-height: 560px; height: 100svh; overflow: hidden; color: #fff; background: #11100f; }
 .experience-background { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: center; }
