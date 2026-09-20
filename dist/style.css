@@ -137,8 +137,3 @@ h1 { position: absolute; top: 44%; left: 7.65%; z-index:1; margin: 0; font-famil
   .stage h1,.details,.profile-card,.portrait img,.info-row,.tools-row,.profile-heading,.profile-description,.profile-stats > div,.experience h2,.experience-intro { transition:none!important; translate:none!important; }
   .profile-card:hover,.profile-card:hover .portrait img { translate:none; scale:1; }
 }
-
-.project-home { --reveal-distance: 24px; position:relative; overflow:hidden; background:#070707; }
-.project-home-visual { width:100%; margin:0 auto; }
-.project-home-visual img { display:block; width:100%; height:auto; }
-.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
