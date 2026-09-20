@@ -14,13 +14,15 @@ img { display:block; }
 .hidden-tab [data-reveal] { animation-play-state:paused!important; }
 @keyframes case-reveal { to { opacity:1; transform:translateY(0); } }
 
-.sohu-case { height:1958px; text-align:center; }
+.sohu-case { min-height:1958px; text-align:center; }
 .sohu-header { position:absolute; top:193px; left:0; z-index:2; width:1920px; }
 .sohu-header h1 { width:849px; margin:0 auto; font-size:96px; line-height:1.12; font-weight:300; letter-spacing:-.055em; }
 .sohu-intro { width:1157px; margin:19px auto 0; font-size:20px; line-height:34px; }
 .sohu-intro p { margin:0; }
 .sohu-screen { position:absolute; top:591px; left:192px; z-index:2; width:1538px; height:764px; margin:0; padding:0; overflow:hidden; background:#111; }
 .sohu-screen img { width:1538px; height:764px; object-fit:cover; }
+.sohu-gallery { width:1920px; margin-top:1958px; background:#000; text-align:left; }
+.sohu-gallery img { display:block; width:1920px; height:auto; margin:0; }
 
 .yon-case { min-height:2153px; }
 .yon-heading { position:absolute; top:284px; left:195px; z-index:2; display:flex; align-items:center; gap:16px; }
