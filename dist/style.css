@@ -66,22 +66,43 @@ h1 { position: absolute; top: 44%; left: 7.65%; margin: 0; font-family: Arial, H
 /* Fourth page: Figma project cards reuse the profile's grouped reveal. */
 .projects { --reveal-distance: 20px; padding: clamp(32px,3.28vw,72px) 5.3% clamp(64px,5.8vw,128px); color: #fff; background: #cecfcb; }
 .projects-list { display: grid; gap: clamp(24px,2.24vw,48px); max-width: 1968px; margin: 0 auto; }
-.project-card { display: grid; grid-template-columns: minmax(0,900fr) minmax(0,666fr); align-items: center; gap: clamp(28px,3.59vw,80px); padding: clamp(24px,2.14vw,48px); border: 1px solid #ffffff0d; border-radius: clamp(26px,2.08vw,44px); background: linear-gradient(100deg,rgba(48,67,74,.81),rgba(10,13,16,.81)); box-shadow: 0 20px 44px -28px #00000038; }
-.project-image { display: block; width: 100%; height: auto; aspect-ratio: 2; object-fit: cover; border-radius: 6px; }
+.project-card { --pointer-x: 50%; --pointer-y: 50%; --image-x: 0px; --image-y: 0px; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0,900fr) minmax(0,666fr); align-items: center; gap: clamp(28px,3.59vw,80px); padding: clamp(24px,2.14vw,48px); border: 1px solid #ffffff0d; border-radius: clamp(26px,2.08vw,44px); background: linear-gradient(100deg,rgba(48,67,74,.81),rgba(10,13,16,.81)); background-size: 140% 140%; background-position: var(--pointer-x) var(--pointer-y); box-shadow: 0 20px 44px -28px #00000038; transition: translate 420ms cubic-bezier(.22,.7,.22,1),box-shadow 420ms ease,border-color 420ms ease,background-position 160ms linear; }
+.project-card::before { content:""; position:absolute; inset:0; z-index:0; border-radius:inherit; opacity:0; pointer-events:none; background:radial-gradient(520px circle at var(--pointer-x) var(--pointer-y),rgba(255,255,255,.09),transparent 58%); transition:opacity 320ms ease; }
+.project-card > * { position:relative; z-index:1; }
+.project-image { display: block; width: 100%; height: auto; aspect-ratio: 2; object-fit: cover; border-radius: 6px; translate:var(--image-x) var(--image-y); scale:1; transition:translate 500ms cubic-bezier(.22,.7,.22,1),scale 500ms cubic-bezier(.22,.7,.22,1),filter 420ms ease; will-change:translate,scale; }
 .project-copy { min-width: 0; }
 .project-meta { display: flex; justify-content: space-between; gap: 16px; margin: 0 0 12px; color: #adb4c0; font-size: clamp(13px,.833vw,17px); line-height: 1.4; letter-spacing: .035em; }
 .project-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .project-card h3 { margin: 0; font-size: clamp(24px,1.563vw,34px); line-height: 1.25; font-weight: 750; }
-.project-title img { flex: 0 0 auto; width: clamp(32px,2.76vw,54px); height: auto; }
+.project-arrow { position:relative; flex:0 0 auto; width:clamp(32px,2.76vw,54px); height:clamp(32px,2.76vw,54px); transition:transform 380ms cubic-bezier(.22,.7,.22,1); }
+.project-arrow::before { content:""; position:absolute; left:18%; top:50%; width:58%; height:2px; background:#fff; transform:translateY(-50%); }
+.project-arrow::after { content:""; position:absolute; right:18%; top:50%; width:30%; height:30%; border-top:2px solid #fff; border-right:2px solid #fff; transform:translateY(-50%) rotate(45deg); transform-origin:center; }
 .project-role { margin: 12px 0; color: #d1d5db; font-size: clamp(16px,1.042vw,22px); line-height: 1.4; }
 .project-description { margin: 0; font-size: clamp(16px,1.042vw,22px); line-height: 1.6; }
 .project-description p { margin: 0; }
 .other-projects { grid-template-columns: 1fr; gap: clamp(28px,2.24vw,48px); }
 .other-projects .project-description { margin-top: 12px; }
 .project-gallery { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; overflow: hidden; border-radius: 6px; }
-.project-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 412 / 230; object-fit: cover; }
+.gallery-item { position:relative; min-width:0; margin:0; overflow:hidden; background:#161a1c; transition:filter 380ms ease; }
+.gallery-item img { display: block; width: 100%; height: auto; aspect-ratio: 412 / 230; object-fit: cover; transition:transform 500ms cubic-bezier(.22,.7,.22,1),filter 380ms ease; }
+.gallery-item figcaption { position:absolute; inset:auto 0 0; padding:34px 18px 14px; color:#fff; font-size:15px; line-height:1.3; background:linear-gradient(transparent,rgba(0,0,0,.72)); opacity:0; transform:translateY(10px); transition:opacity 320ms ease,transform 320ms ease; }
+.project-meta,.project-card h3,.project-role,.project-description { translate:0 0; transition:color 320ms ease,translate 380ms cubic-bezier(.22,.7,.22,1); }
+@media (hover:hover) and (pointer:fine) {
+  .project-card:hover { translate:0 -8px; border-color:#ffffff24; box-shadow:0 30px 64px -28px #00000066; }
+  .project-card:hover::before { opacity:1; }
+  .project-card:hover .project-image { translate:var(--image-x) var(--image-y); scale:1.025; filter:brightness(1.035); }
+  .project-card:hover .project-meta { color:#cbd1d9; }
+  .project-card:hover h3 { translate:0 -3px; }
+  .project-card:hover .project-role { color:#eef0f3; translate:0 -2px; transition-delay:60ms; }
+  .project-card:hover .project-description { color:#fff; translate:0 -2px; transition-delay:120ms; }
+  .project-card:hover .project-arrow { transform:translateX(8px); }
+  .project-gallery:has(.gallery-item:hover) .gallery-item:not(:hover) { filter:brightness(.7); }
+  .gallery-item:hover img { transform:scale(1.04); }
+  .gallery-item:hover figcaption { opacity:1; transform:translateY(0); }
+}
 @media (max-width: 1000px) { .project-card { grid-template-columns: 1fr; gap: 26px; } .project-copy { padding: 0 4px; } .project-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; } .project-card h3 { font-size: 26px; } }
 @media (max-width: 500px) { .projects { padding: 32px 5% 56px; } .project-card { padding: 20px; gap: 24px; } .project-copy { padding: 0; } .project-card h3 { font-size: 24px; } .project-role { font-size: 15px; } .project-meta { font-size: 12px; } .project-gallery { gap: 8px; } }
+@media (prefers-reduced-motion: reduce) { .project-card,.project-card::before,.project-image,.project-arrow,.project-meta,.project-card h3,.project-role,.project-description,.gallery-item,.gallery-item img,.gallery-item figcaption { transition:none!important; } .project-card:hover,.project-card:hover h3,.project-card:hover .project-role,.project-card:hover .project-description,.project-card:hover .project-image { translate:none; } .project-card:hover .project-image { scale:1; } .gallery-item:hover img { transform:none; } }
 
 /* Third page: static image with staggered, subtle text reveals. */
 .experience { --reveal-distance: 16px; position: relative; isolation: isolate; min-height: 560px; height: 100svh; overflow: hidden; color: #fff; background: #11100f; }

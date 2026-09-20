@@ -34,3 +34,24 @@ if ('IntersectionObserver' in window) {
   document.documentElement.classList.add('reveal-ready');
   for (const group of document.querySelectorAll('[data-reveal]')) revealObserver.observe(group);
 }
+
+// Desktop pointer interaction: subtle parallax and a soft highlight inside each project card.
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+for (const card of document.querySelectorAll('.project-card:not(.other-projects)')) {
+  card.addEventListener('pointermove', event => {
+    if (!finePointer.matches || reduceMotion.matches) return;
+    const rect = card.getBoundingClientRect();
+    const x = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+    const y = Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height));
+    card.style.setProperty('--pointer-x', (x * 100).toFixed(1) + '%');
+    card.style.setProperty('--pointer-y', (y * 100).toFixed(1) + '%');
+    card.style.setProperty('--image-x', ((x - .5) * 10).toFixed(1) + 'px');
+    card.style.setProperty('--image-y', ((y - .5) * 10).toFixed(1) + 'px');
+  });
+  card.addEventListener('pointerleave', () => {
+    card.style.setProperty('--pointer-x', '50%');
+    card.style.setProperty('--pointer-y', '50%');
+    card.style.setProperty('--image-x', '0px');
+    card.style.setProperty('--image-y', '0px');
+  });
+}
