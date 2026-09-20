@@ -84,6 +84,7 @@ h1 { position: absolute; top: 44%; left: 7.65%; z-index:1; margin: 0; font-famil
 /* Fourth page: Figma project cards reuse the profile's grouped reveal. */
 .projects { --reveal-distance: 20px; padding: clamp(32px,3.28vw,72px) 5.3% clamp(64px,5.8vw,128px); color: #fff; background: #cecfcb; }
 .projects-list { display: grid; gap: clamp(24px,2.24vw,48px); max-width: 1968px; margin: 0 auto; }
+.project-link { display:block; color:inherit; text-decoration:none; }
 .project-card { --pointer-x: 50%; --pointer-y: 50%; --image-x: 0px; --image-y: 0px; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0,900fr) minmax(0,666fr); align-items: center; gap: clamp(28px,3.59vw,80px); padding: clamp(24px,2.14vw,48px); border: 1px solid #ffffff0d; border-radius: clamp(26px,2.08vw,44px); background: linear-gradient(100deg,rgba(48,67,74,.81),rgba(10,13,16,.81)); background-size: 140% 140%; background-position: var(--pointer-x) var(--pointer-y); box-shadow: 0 20px 44px -28px #00000038; transition: translate 420ms cubic-bezier(.22,.7,.22,1),box-shadow 420ms ease,border-color 420ms ease,background-position 160ms linear; }
 .project-card::before { content:""; position:absolute; inset:0; z-index:0; border-radius:inherit; opacity:0; pointer-events:none; background:radial-gradient(520px circle at var(--pointer-x) var(--pointer-y),rgba(255,255,255,.09),transparent 58%); transition:opacity 320ms ease; }
 .project-card > * { position:relative; z-index:1; }
@@ -136,3 +137,8 @@ h1 { position: absolute; top: 44%; left: 7.65%; z-index:1; margin: 0; font-famil
   .stage h1,.details,.profile-card,.portrait img,.info-row,.tools-row,.profile-heading,.profile-description,.profile-stats > div,.experience h2,.experience-intro { transition:none!important; translate:none!important; }
   .profile-card:hover,.profile-card:hover .portrait img { translate:none; scale:1; }
 }
+
+.project-home { --reveal-distance: 24px; position:relative; overflow:hidden; background:#070707; }
+.project-home-visual { width:100%; margin:0 auto; }
+.project-home-visual img { display:block; width:100%; height:auto; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
