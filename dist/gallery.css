@@ -1,0 +1,7 @@
+:root { color-scheme:dark; background:#000; }
+* { box-sizing:border-box; }
+html, body { margin:0; min-width:1920px; background:#000; }
+body { overflow-x:auto; }
+.gallery-page, .gallery-stack { width:1920px; margin:0; }
+.gallery-stack img { display:block; width:1920px; height:auto; margin:0; }
+
