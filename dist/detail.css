@@ -22,7 +22,7 @@ img { display:block; }
 .sohu-screen { position:absolute; top:591px; left:192px; z-index:2; width:1538px; height:764px; margin:0; padding:0; overflow:hidden; background:#111; }
 .sohu-screen img { width:1538px; height:764px; object-fit:cover; }
 
-.yon-case { height:2153px; }
+.yon-case { min-height:2153px; }
 .yon-heading { position:absolute; top:284px; left:195px; z-index:2; display:flex; align-items:center; gap:16px; }
 .yon-logo { width:366px; color:#fff; font-size:70px; line-height:1; font-weight:700; letter-spacing:-.07em; white-space:nowrap; }
 .yon-logo span { color:#ef2929; }
@@ -41,4 +41,6 @@ img { display:block; }
 .yon-feature:first-child { padding-left:0; border-left:0; }
 .yon-feature strong { display:block; margin-bottom:13px; font-size:24px; font-weight:600; }
 .yon-feature span { font-size:16px; color:#d2d3d5; }
+.yon-gallery { width:1920px; margin-top:2153px; background:#fff; }
+.yon-gallery img { display:block; width:1920px; height:auto; margin:0; }
 @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.reveal-ready [data-reveal],.reveal-ready [data-reveal].is-visible{opacity:1;transform:none;animation:none!important}.back-link{transition:none} }
