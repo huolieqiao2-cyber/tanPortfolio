@@ -54,17 +54,17 @@ h1 { position: absolute; top: 44%; left: 7.65%; margin: 0; font-family: Arial, H
 .profile-stats div { min-width: 0; }
 .profile-stats dt { font-size: clamp(26px,2.084vw,44px); font-weight: 700; line-height: 1.3; letter-spacing: -.035em; white-space: nowrap; }
 .profile-stats dd { margin: 12px 0 0; font-size: clamp(14px,1.04vw,20px); line-height: 1.7; }
-.reveal-ready [data-reveal] { opacity: 0; transform: translateY(26px); }
+.reveal-ready [data-reveal] { opacity: 0; transform: translateY(var(--reveal-distance,26px)); }
 .reveal-ready [data-reveal].is-visible { animation: profile-reveal 720ms cubic-bezier(.22,.7,.22,1) var(--reveal-delay,0ms) both; }
 .hidden-tab [data-reveal] { animation-play-state: paused !important; }
-@keyframes profile-reveal { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes profile-reveal { from { opacity: 0; transform: translateY(var(--reveal-distance,26px)); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 1100px) and (min-width: 801px) { .info-row { grid-template-columns: 1fr; } .profile-stats { grid-template-columns: 1fr 1fr; gap: 30px; padding-top: 48px; } }
 @media (max-width: 800px) { .profile { padding: 32px 5%; } .profile-layout { grid-template-columns: 1fr; gap: 22px; } .bio-card { padding: 26px; } .statement-card { padding: 40px 28px; } .profile h2 { font-size: clamp(30px,6vw,44px); } .profile-stats { grid-template-columns: 1fr 1fr; gap: 30px 20px; padding-top: 48px; } .reveal-ready [data-reveal].is-visible { animation-delay: calc(var(--reveal-delay,0ms) * .55); } }
 @media (max-width: 420px) { .info-row { grid-template-columns: 1fr; gap: 14px; } .bio-info p { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .reveal-ready [data-reveal], .reveal-ready [data-reveal].is-visible { animation: none !important; opacity: 1; transform: none; } }
 
-/* Third page: static image and live text, matching the experience cover. */
-.experience { position: relative; isolation: isolate; min-height: 560px; height: 100svh; overflow: hidden; color: #fff; background: #11100f; }
+/* Third page: static image with staggered, subtle text reveals. */
+.experience { --reveal-distance: 16px; position: relative; isolation: isolate; min-height: 560px; height: 100svh; overflow: hidden; color: #fff; background: #11100f; }
 .experience-background { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .experience h2 { position: absolute; top: 12.6%; left: 0; width: 100%; margin: 0; text-align: center; font: 700 clamp(64px,10vw,220px)/1 Arial,Helvetica,sans-serif; letter-spacing: -.05em; color: rgba(255,255,255,.035); }
 .experience-intro { position: relative; width: 86%; max-width: 1900px; margin: 0 auto; padding-top: max(180px,32.2svh); text-align: center; font-size: clamp(24px,3.125vw,68px); line-height: 1.267; font-weight: 750; }
