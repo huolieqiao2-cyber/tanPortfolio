@@ -37,6 +37,36 @@ if ('IntersectionObserver' in window) {
 
 // Desktop pointer interaction: subtle parallax and a soft highlight inside each project card.
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+function bindPointerResponse(element, range) {
+  element.addEventListener('pointermove', event => {
+    if (!finePointer.matches || reduceMotion.matches) return;
+    const rect = element.getBoundingClientRect();
+    const x = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+    const y = Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height));
+    element.style.setProperty('--cursor-x', (x * 100).toFixed(1) + '%');
+    element.style.setProperty('--cursor-y', (y * 100).toFixed(1) + '%');
+    element.style.setProperty('--shift-x', ((x - .5) * range * 2).toFixed(1) + 'px');
+    element.style.setProperty('--shift-y', ((y - .5) * range * 2).toFixed(1) + 'px');
+    element.style.setProperty('--soft-x', ((x - .5) * range * -.65).toFixed(1) + 'px');
+    element.style.setProperty('--soft-y', ((y - .5) * range * -.65).toFixed(1) + 'px');
+  });
+  element.addEventListener('pointerleave', () => {
+    element.style.setProperty('--cursor-x', '50%');
+    element.style.setProperty('--cursor-y', '50%');
+    element.style.setProperty('--shift-x', '0px');
+    element.style.setProperty('--shift-y', '0px');
+    element.style.setProperty('--soft-x', '0px');
+    element.style.setProperty('--soft-y', '0px');
+  });
+}
+
+const stagePointerArea = document.querySelector('.stage');
+const experiencePointerArea = document.querySelector('.experience');
+if (stagePointerArea) bindPointerResponse(stagePointerArea, 10);
+if (experiencePointerArea) bindPointerResponse(experiencePointerArea, 5);
+for (const card of document.querySelectorAll('.profile-card')) bindPointerResponse(card, 6);
+
 for (const card of document.querySelectorAll('.project-card:not(.other-projects)')) {
   card.addEventListener('pointermove', event => {
     if (!finePointer.matches || reduceMotion.matches) return;
