@@ -27,8 +27,8 @@ img.is-loaded { opacity:1; transition:opacity 420ms ease; }
 .sohu-gallery img { display:block; width:100%; height:auto; margin:0; }
 
 .yon-case { min-height:0; }
-.yon-heading { position:absolute; top:min(14.792vw,284px); left:10.156%; z-index:2; display:flex; align-items:center; gap:min(.833vw,16px); }
-.yon-logo { width:min(19.063vw,366px); color:#fff; font-size:clamp(28px,3.646vw,70px); line-height:1; font-weight:700; letter-spacing:-.07em; white-space:nowrap; }
+.yon-heading { position:absolute; top:min(14.792vw,284px); left:10.156%; z-index:2; display:flex; align-items:baseline; gap:min(1.25vw,24px); }
+.yon-logo { width:auto; color:#fff; font-size:clamp(32px,4.219vw,81px); line-height:.95; font-weight:700; letter-spacing:-.07em; white-space:nowrap; }
 .yon-logo span { color:#ef2929; }
 .yon-heading h1 { margin:0; font-size:clamp(32px,4.219vw,81px); line-height:.95; font-weight:700; letter-spacing:-.045em; white-space:nowrap; }
 .yon-kicker { position:absolute; top:min(19.479vw,374px); left:11.198%; z-index:2; margin:0; font-size:clamp(8px,.729vw,14px); letter-spacing:min(.313vw,6px); text-transform:lowercase; color:#d2d3d5; }
@@ -50,5 +50,30 @@ img.is-loaded { opacity:1; transition:opacity 420ms ease; }
 @supports (content-visibility:auto) {
   .sohu-gallery img[data-src], .yon-gallery img[data-src], .standalone-gallery img[data-src] { content-visibility:auto; }
 }
-@media (max-width:700px) { .sohu-intro{width:78%;line-height:1.45}.yon-introduction{left:7%;width:86%;grid-template-columns:1fr;gap:10px}.yon-introduction h2 span{display:inline;margin-left:8px}.yon-copy>p{display:none}.yon-features{margin-top:0}.yon-feature{padding:0 8px}.yon-feature:first-child{padding-left:0} }
+@media (max-width:700px) {
+  .back-link{top:18px;left:18px;font-size:12px}
+  .sohu-case{min-height:0;text-align:left}
+  .sohu-background img{min-height:680px;object-fit:cover;object-position:center top}
+  .sohu-header{top:70px;left:6%;width:88%}
+  .sohu-header h1{width:100%;margin:0;font-size:clamp(32px,10vw,44px);line-height:1.06;letter-spacing:-.045em}
+  .sohu-intro{width:100%;margin:18px 0 0;font-size:13px;line-height:1.65}
+  .sohu-screen{top:clamp(330px,88vw,390px);left:5%;width:90%;border-radius:2px}
+  .sohu-gallery{margin-top:clamp(650px,168vw,760px)}
+  .yon-background img{min-height:760px;object-fit:cover;object-position:center top}
+  .yon-heading{top:72px;left:6%;right:6%;align-items:baseline;gap:10px;white-space:nowrap}
+  .yon-logo,.yon-heading h1{font-size:clamp(24px,7.25vw,34px);line-height:1}
+  .yon-heading h1{text-align:left}
+  .yon-kicker{top:120px;left:6%;font-size:8px;letter-spacing:3px}
+  .yon-showcase{top:158px;left:4%;width:92%;padding:8px}
+  .yon-introduction{top:clamp(455px,112vw,535px);left:6%;width:88%;grid-template-columns:1fr;gap:14px}
+  .yon-introduction h2{margin:0;font-size:24px}
+  .yon-introduction h2 span{display:inline;margin:0 0 0 8px;font-size:12px}
+  .yon-copy{font-size:12px;line-height:1.55}
+  .yon-copy>p{display:block}
+  .yon-features{grid-template-columns:1fr;margin-top:18px;gap:0}
+  .yon-feature,.yon-feature:first-child{min-height:0;padding:10px 0;border-left:0;border-top:1px solid #ffffff38}
+  .yon-feature strong{margin-bottom:5px;font-size:13px}
+  .yon-feature span{font-size:11px}
+  .yon-gallery{margin-top:clamp(780px,205vw,920px)}
+}
 @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.reveal-ready [data-reveal],.reveal-ready [data-reveal].is-visible{opacity:1;transform:none;animation:none!important}.back-link{transition:none} }
