@@ -14,6 +14,7 @@
 .hobby-slide { position:relative; flex:0 0 var(--slide-width); height:clamp(250px,36vh,390px); margin:0; overflow:hidden; background:#222; cursor:zoom-in; }
 .hobby-slide::after { content:""; position:absolute; inset:auto 0 0; height:38%; pointer-events:none; background:linear-gradient(transparent,#080808d9); opacity:0; transition:opacity 260ms ease; }
 .hobby-slide img { width:100%; height:100%; object-fit:cover; transform:scale(1.01); transform-origin:var(--focus-x,50%) var(--focus-y,50%); transition:transform 700ms cubic-bezier(.22,.7,.22,1),filter 500ms ease; will-change:transform; }
+.hobby-slide img.focus-face { object-position:50% 0%; }
 .hobby-slide[aria-current="true"] img { transform:scale(1.045); filter:brightness(1.06); }
 .hobby-slide:hover img { transform:scale(1.13); filter:brightness(1.07); }
 .hobby-slide figcaption { position:absolute; z-index:2; inset:auto clamp(18px,1.45vw,28px) clamp(16px,1.35vw,26px); color:#fff; font-size:clamp(13px,1.04vw,20px); line-height:1.35; letter-spacing:.06em; text-shadow:0 2px 12px #000; opacity:0; transform:translateY(12px); transition:opacity 260ms ease,transform 320ms ease; pointer-events:none; }
