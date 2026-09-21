@@ -7,15 +7,15 @@
   <meta name="description" content="谭嘉慧的 UX / UI 设计作品集与个人介绍。">
   <title>光影 · Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23242424'/%3E%3Cpath d='M16 5L29 27H3Z' fill='%23ddd'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=7">
-  <link rel="stylesheet" href="home-more.css?v=4">
-  <script src="app.js?v=7" defer></script>
+  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="home-more.css?v=5">
+  <script src="app.js?v=8" defer></script>
   <script src="home-more.js?v=3" defer></script>
 </head>
 <body>
   <main>
   <section class="stage" aria-label="谭嘉慧作品集封面">
-    <div class="light-arrival" aria-hidden="true"><div class="light-drift"><img src="assets/light-source.png" alt="" fetchpriority="high" width="1920" height="1080"></div></div>
+    <div class="light-arrival" aria-hidden="true"><div class="light-drift"><img src="assets/light-source.webp" alt="" fetchpriority="high" width="1920" height="1080"></div></div>
     <div class="glow" aria-hidden="true"></div>
     <div class="shade" aria-hidden="true"></div>
     <h1 aria-label="Portfolio"><span class="line"><span class="word first">PORTF</span></span><span class="line"><span class="word second">OLIO</span></span></h1>
@@ -30,7 +30,7 @@
       <article class="profile-card bio-card" data-reveal>
         <figure class="portrait" data-reveal style="--reveal-delay: 180ms">
           <figcaption><span>UX UI Designer</span><span>Tan Jiahui</span></figcaption>
-          <img src="assets/profile-photo.png" width="615" height="439" alt="谭嘉慧的个人照片" loading="lazy">
+          <img src="assets/profile-photo.webp" width="615" height="439" alt="谭嘉慧的个人照片" loading="lazy" decoding="async">
         </figure>
         <div class="bio-info">
           <div class="info-row" data-reveal style="--reveal-delay: 360ms">
@@ -67,7 +67,7 @@
     </div>
   </section>
   <section class="experience" id="experience" aria-labelledby="experience-heading">
-    <img class="experience-background" src="assets/experience-background.png" width="1920" height="1139" alt="" loading="lazy" aria-hidden="true">
+    <img class="experience-background" src="assets/experience-background.webp" width="1920" height="1139" alt="" loading="lazy" decoding="async" aria-hidden="true">
     <h2 id="experience-heading" data-reveal>EXPERIENCE</h2>
     <div class="experience-intro">
       <p data-reveal style="--reveal-delay: 220ms">经历覆盖 C 端、B 端复杂系统、AI 产品与多端智能硬件</p>
@@ -98,7 +98,7 @@
           <p class="project-description" data-reveal style="--reveal-delay: 520ms">负责 HRM 搜索、浏览、编辑核心模块设计，优化信息架构与操作流程，提升系统易用性与业务效率。</p>
         </div>
       </article></a>
-      <article class="project-card" data-reveal aria-labelledby="project-3-heading">
+      <article class="project-card insta-project" data-confidential-card data-reveal aria-labelledby="project-3-heading" role="button" tabindex="0" aria-expanded="false">
         <img class="project-image" src="assets/insta360.webp" width="1200" height="600" alt="影石 Insta360 X6 全景相机" loading="lazy" data-reveal style="--reveal-delay: 140ms">
         <div class="project-copy">
           <header data-reveal style="--reveal-delay: 280ms">
@@ -106,7 +106,7 @@
             <div class="project-title"><h3 id="project-3-heading">影石 Insta360</h3><span class="project-arrow" aria-hidden="true"></span></div>
           </header>
           <p class="project-role" data-reveal style="--reveal-delay: 400ms">C 端 + 固件端 / 用户体验实习生</p>
-          <p class="project-description" data-reveal style="--reveal-delay: 520ms">参与旗舰全景相机 X6 [充电状态 AI 自动分析剪辑] 子功能设计。基于埋点数据与用户反馈，梳理 AI 自动创作效率与充电延迟、知情权缺失、可控性不足之间的体验矛盾。</p>
+          <p class="project-description confidential-description" data-reveal style="--reveal-delay: 520ms"><span class="confidential-original">参与旗舰全景相机 X6 [充电状态 AI 自动分析剪辑] 子功能设计。基于埋点数据与用户反馈，梳理 AI 自动创作效率与充电延迟、知情权缺失、可控性不足之间的体验矛盾。</span><span class="confidential-message">项目暂且保密。</span></p>
         </div>
       </article>
       <a class="project-link" href="huace.html" aria-label="打开华测导航项目详情页"><article class="project-card" data-reveal aria-labelledby="project-4-heading">
@@ -134,10 +134,10 @@
           </div>
         </div>
         <div class="project-gallery">
-          <figure class="gallery-item" data-reveal style="--reveal-delay: 160ms"><img src="assets/course.webp" width="620" height="346" alt="粉笔教育 APP 改版" loading="lazy"><figcaption>粉笔教育 APP 改版</figcaption></figure>
-          <figure class="gallery-item" data-reveal style="--reveal-delay: 260ms"><img src="assets/ip.webp" width="620" height="346" alt="IP 视觉设计" loading="lazy"><figcaption>IP 视觉设计</figcaption></figure>
-          <figure class="gallery-item" data-reveal style="--reveal-delay: 360ms"><img src="assets/iot.webp" width="620" height="346" alt="物联网设备管理小程序" loading="lazy"><figcaption>物联网设备管理小程序</figcaption></figure>
-          <figure class="gallery-item" data-reveal style="--reveal-delay: 460ms"><img src="assets/icons.webp" width="620" height="346" alt="图标设计" loading="lazy"><figcaption>图标设计</figcaption></figure>
+          <figure class="gallery-item" data-reveal style="--reveal-delay: 160ms"><img src="assets/course.webp" width="620" height="346" alt="粉笔教育 APP 改版" loading="lazy" decoding="async" fetchpriority="low"><figcaption>粉笔教育 APP 改版</figcaption></figure>
+          <figure class="gallery-item" data-reveal style="--reveal-delay: 260ms"><img src="assets/ip.webp" width="620" height="346" alt="IP 视觉设计" loading="lazy" decoding="async" fetchpriority="low"><figcaption>IP 视觉设计</figcaption></figure>
+          <figure class="gallery-item" data-reveal style="--reveal-delay: 360ms"><img src="assets/iot.webp" width="620" height="346" alt="物联网设备管理小程序" loading="lazy" decoding="async" fetchpriority="low"><figcaption>物联网设备管理小程序</figcaption></figure>
+          <figure class="gallery-item" data-reveal style="--reveal-delay: 460ms"><img src="assets/icons.webp" width="620" height="346" alt="图标设计" loading="lazy" decoding="async" fetchpriority="low"><figcaption>图标设计</figcaption></figure>
         </div>
       </article></a>
     </div>
@@ -155,15 +155,15 @@
       <button class="carousel-control prev" type="button" aria-label="上一张">←</button>
       <div class="carousel-window">
         <div class="carousel-track">
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/product-render-01.jpg" width="1333" height="1500" alt="COSIE 虹吸咖啡机产品渲染" loading="lazy"><figcaption>产品渲染 · COSIE 虹吸咖啡机</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/product-render-02.jpg" width="1200" height="1500" alt="THULE 设备产品渲染" loading="lazy"><figcaption>产品渲染 · THULE 设备概念</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/product-render-03.jpg" width="1200" height="1500" alt="CoolWoo 磁吸充电器产品渲染" loading="lazy"><figcaption>产品渲染 · CoolWoo 磁吸充电器</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/lumei-campus-01.jpg" width="1000" height="1500" alt="鲁迅美术学院浑南校区建筑摄影一" loading="lazy"><figcaption>摄影 · 鲁美浑南校区 01</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/lumei-campus-02.jpg" width="2347" height="1500" alt="鲁迅美术学院浑南校区建筑摄影二" loading="lazy"><figcaption>摄影 · 鲁美浑南校区 02</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/lumei-campus-03.jpg" width="2259" height="1500" alt="鲁迅美术学院浑南校区建筑摄影三" loading="lazy"><figcaption>摄影 · 鲁美浑南校区 03</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/shenyang-palace-01.jpg" width="1122" height="1500" alt="沈阳故宫建筑摄影一" loading="lazy"><figcaption>城市摄影 · 沈阳故宫 01</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/shenyang-palace-02.jpg" width="1135" height="1500" alt="沈阳故宫猫咪摄影" loading="lazy"><figcaption>城市摄影 · 沈阳故宫 02</figcaption></figure>
-          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/shenyang-palace-03.jpg" width="1000" height="1500" alt="沈阳故宫影壁摄影" loading="lazy"><figcaption>城市摄影 · 沈阳故宫 03</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/product-render-01.webp" width="1333" height="1500" alt="COSIE 虹吸咖啡机产品渲染" loading="lazy" decoding="async" fetchpriority="low"><figcaption>产品渲染 · COSIE 虹吸咖啡机</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/product-render-02.webp" width="1200" height="1500" alt="THULE 设备产品渲染" loading="lazy" decoding="async" fetchpriority="low"><figcaption>产品渲染 · THULE 设备概念</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/product-render-03.webp" width="1200" height="1500" alt="CoolWoo 磁吸充电器产品渲染" loading="lazy" decoding="async" fetchpriority="low"><figcaption>产品渲染 · CoolWoo 磁吸充电器</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/lumei-campus-01.webp" width="1000" height="1500" alt="鲁迅美术学院浑南校区建筑摄影一" loading="lazy" decoding="async" fetchpriority="low"><figcaption>摄影 · 鲁美浑南校区 01</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/lumei-campus-02.webp" width="2347" height="1500" alt="鲁迅美术学院浑南校区建筑摄影二" loading="lazy" decoding="async" fetchpriority="low"><figcaption>摄影 · 鲁美浑南校区 02</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/lumei-campus-03.webp" width="2259" height="1500" alt="鲁迅美术学院浑南校区建筑摄影三" loading="lazy" decoding="async" fetchpriority="low"><figcaption>摄影 · 鲁美浑南校区 03</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/shenyang-palace-01.webp" width="1122" height="1500" alt="沈阳故宫建筑摄影一" loading="lazy" decoding="async" fetchpriority="low"><figcaption>城市摄影 · 沈阳故宫 01</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/shenyang-palace-02.webp" width="1135" height="1500" alt="沈阳故宫猫咪摄影" loading="lazy" decoding="async" fetchpriority="low"><figcaption>城市摄影 · 沈阳故宫 02</figcaption></figure>
+          <figure class="hobby-slide"><img src="assets/hobbies/portfolio/shenyang-palace-03.webp" width="1000" height="1500" alt="沈阳故宫影壁摄影" loading="lazy" decoding="async" fetchpriority="low"><figcaption>城市摄影 · 沈阳故宫 03</figcaption></figure>
         </div>
       </div>
       <button class="carousel-control next" type="button" aria-label="下一张">→</button>
@@ -171,7 +171,7 @@
     <footer class="hobbies-footer"><span>粉丝积累 1.6W＋</span><span>UTC+7</span></footer>
   </section>
   <section class="contact-page" id="contact" aria-labelledby="contact-heading">
-    <div class="contact-light-arrival" aria-hidden="true"><div class="contact-light-drift"><img src="assets/hobbies/footer-light.png" alt=""></div></div>
+    <div class="contact-light-arrival" aria-hidden="true"><div class="contact-light-drift"><img src="assets/hobbies/footer-light.webp" alt="" loading="lazy" decoding="async"></div></div>
     <div class="contact-glow" aria-hidden="true"></div>
     <div class="contact-content">
       <h2 id="contact-heading">期待与你建立联系</h2>

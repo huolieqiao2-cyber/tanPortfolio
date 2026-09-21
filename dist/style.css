@@ -98,6 +98,12 @@ h1 { position: absolute; top: 44%; left: 7.65%; z-index:1; margin: 0; font-famil
 .project-arrow::after { content:""; position:absolute; right:18%; top:50%; width:30%; height:30%; border-top:2px solid #fff; border-right:2px solid #fff; transform:translateY(-50%) rotate(45deg); transform-origin:center; }
 .project-role { margin: 12px 0; color: #d1d5db; font-size: clamp(16px,1.042vw,22px); line-height: 1.4; }
 .project-description { margin: 0; font-size: clamp(16px,1.042vw,22px); line-height: 1.6; }
+.insta-project { cursor:pointer; }
+.confidential-description { display:grid; }
+.confidential-description > span { grid-area:1/1; transition:opacity 260ms ease,transform 360ms cubic-bezier(.22,.7,.22,1); }
+.confidential-message { opacity:0; transform:translateY(9px); font-weight:700; letter-spacing:.04em; }
+.insta-project.is-confidential .confidential-original { opacity:0; transform:translateY(-9px); }
+.insta-project.is-confidential .confidential-message { opacity:1; transform:translateY(0); }
 .project-description p { margin: 0; }
 .other-projects { grid-template-columns: 1fr; gap: clamp(28px,2.24vw,48px); }
 .other-projects .project-description { margin-top: 12px; }

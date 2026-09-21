@@ -85,3 +85,18 @@ for (const card of document.querySelectorAll('.project-card:not(.other-projects)
     card.style.setProperty('--image-y', '0px');
   });
 }
+
+// Confidential projects stay explorable without navigating away: the card copy
+// crossfades to the disclosure state on click or keyboard activation.
+for (const card of document.querySelectorAll('[data-confidential-card]')) {
+  const toggleConfidential = () => {
+    const active = card.classList.toggle('is-confidential');
+    card.setAttribute('aria-expanded', String(active));
+  };
+  card.addEventListener('click', toggleConfidential);
+  card.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    toggleConfidential();
+  });
+}
