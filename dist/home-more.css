@@ -9,14 +9,25 @@
 .hobbies-labels { display:grid; grid-template-columns:repeat(3,1fr); margin-top:clamp(8px,1.2vw,20px); color:#ddd; font-size:clamp(14px,1.25vw,24px); text-align:center; }
 .hobbies-carousel { position:relative; display:flex; align-items:center; width:100%; margin-top:clamp(50px,10.6vh,114px); }
 .carousel-window { width:100%; overflow:hidden; touch-action:pan-y; }
-.carousel-track { --slide-width:32.7vw; --slide-gap:1vw; display:flex; align-items:stretch; gap:var(--slide-gap); transform:translate3d(var(--carousel-x,0),0,0); transition:transform 720ms cubic-bezier(.22,.7,.22,1); will-change:transform; }
+.carousel-track { --slide-width:32.7vw; --slide-gap:1vw; display:flex; align-items:stretch; gap:var(--slide-gap); transform:translate3d(var(--carousel-x,0),0,0); transition:transform 380ms cubic-bezier(.22,.7,.22,1); will-change:transform; }
+.carousel-track.no-transition { transition:none; }
 .hobby-slide { position:relative; flex:0 0 var(--slide-width); height:clamp(250px,36vh,390px); margin:0; overflow:hidden; background:#222; cursor:zoom-in; }
-.hobby-slide::after { content:""; position:absolute; inset:auto 0 0; height:38%; pointer-events:none; background:linear-gradient(transparent,#080808d9); }
+.hobby-slide::after { content:""; position:absolute; inset:auto 0 0; height:38%; pointer-events:none; background:linear-gradient(transparent,#080808d9); opacity:0; transition:opacity 260ms ease; }
 .hobby-slide img { width:100%; height:100%; object-fit:cover; transform:scale(1.01); transform-origin:var(--focus-x,50%) var(--focus-y,50%); transition:transform 700ms cubic-bezier(.22,.7,.22,1),filter 500ms ease; will-change:transform; }
 .hobby-slide[aria-current="true"] img { transform:scale(1.045); filter:brightness(1.06); }
 .hobby-slide:hover img { transform:scale(1.13); filter:brightness(1.07); }
-.hobby-slide figcaption { position:absolute; z-index:2; inset:auto clamp(18px,1.45vw,28px) clamp(16px,1.35vw,26px); color:#fff; font-size:clamp(13px,1.04vw,20px); line-height:1.35; letter-spacing:.06em; text-shadow:0 2px 12px #000; transform:translateY(4px); transition:transform 320ms ease; }
-.hobby-slide:hover figcaption { transform:translateY(0); }
+.hobby-slide figcaption { position:absolute; z-index:2; inset:auto clamp(18px,1.45vw,28px) clamp(16px,1.35vw,26px); color:#fff; font-size:clamp(13px,1.04vw,20px); line-height:1.35; letter-spacing:.06em; text-shadow:0 2px 12px #000; opacity:0; transform:translateY(12px); transition:opacity 260ms ease,transform 320ms ease; pointer-events:none; }
+.hobby-slide:hover::after,.hobby-slide:focus-visible::after { opacity:1; }
+.hobby-slide:hover figcaption,.hobby-slide:focus-visible figcaption { opacity:1; transform:translateY(0); }
+.hobby-slide:focus-visible { outline:2px solid #fff; outline-offset:-2px; }
+.image-viewer { position:fixed; inset:0; z-index:1000; display:grid; place-items:center; padding:clamp(18px,3vw,52px); color:#fff; background:#050505ed; backdrop-filter:blur(16px); }
+.image-viewer[hidden] { display:none; }
+.image-viewer-inner { display:flex; flex-direction:column; align-items:center; gap:16px; max-width:100%; max-height:100%; }
+.image-viewer img { display:block; width:auto; height:auto; max-width:92vw; max-height:84vh; object-fit:contain; box-shadow:0 24px 90px #000b; }
+.image-viewer p { margin:0; font-size:clamp(14px,1.15vw,20px); letter-spacing:.06em; }
+.image-viewer-close { position:fixed; top:clamp(18px,2.5vw,40px); right:clamp(18px,2.5vw,40px); width:48px; height:48px; border:1px solid #ffffff70; border-radius:50%; color:#fff; background:#1119; font-size:28px; line-height:1; cursor:pointer; }
+.image-viewer-close:hover { background:#fff; color:#111; }
+body.viewer-open { overflow:hidden; }
 .carousel-control { position:absolute; top:50%; z-index:5; width:clamp(52px,5vw,96px); height:clamp(52px,5vw,96px); padding:0; border:0; border-radius:50%; color:#111; background:#efefefdf; box-shadow:0 12px 40px #0006; font-size:clamp(26px,2.3vw,46px); cursor:pointer; transform:translateY(-50%); transition:scale 260ms ease,background 260ms ease; }
 .carousel-control:hover { scale:1.07; background:#fff; }
 .carousel-control.prev { left:8.3%; }
